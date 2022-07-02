@@ -3,6 +3,7 @@ package com.example.a662j;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,12 +25,12 @@ public class MainActivity extends AppCompatActivity {
         VolleyHttp.get(VolleyHttp.API_LIST_POST, VolleyHttp.paramsEmpty(), new VolleyHandler() {
             @Override
             public void onSuccess(String response) {
-
+                Log.d("@@@onResponse ", response);
             }
 
             @Override
             public void onError(String error) {
-
+                Log.d("@@@onErrorResponse ", error);
             }
         });
     }
@@ -38,10 +39,12 @@ public class MainActivity extends AppCompatActivity {
         VolleyHttp.post(VolleyHttp.API_CREATE_POST, VolleyHttp.paramsCreate(poster), new VolleyHandler() {
             @Override
             public void onSuccess(String response) {
+                Log.d("@@@onResponse ", response);
             }
 
             @Override
             public void onError(String error) {
+                Log.d("@@@onErrorResponse ", error);
             }
         });
     }
@@ -50,10 +53,12 @@ public class MainActivity extends AppCompatActivity {
         VolleyHttp.put(VolleyHttp.API_UPDATE_POST + poster.getId(), VolleyHttp.paramsUpdate(poster), new VolleyHandler() {
             @Override
             public void onSuccess(String response) {
+                Log.d("@@@onResponse ", response);
             }
 
             @Override
             public void onError(String error) {
+                Log.d("@@@onErrorResponse ", error);
             }
         });
     }
@@ -62,10 +67,12 @@ public class MainActivity extends AppCompatActivity {
         VolleyHttp.del(VolleyHttp.API_DELETE_POST + poster.getId(), new VolleyHandler() {
             @Override
             public void onSuccess(String response) {
+                Log.d("@@@onResponse ", response);
             }
 
             @Override
             public void onError(String error) {
+                Log.d("@@@onErrorResponse ", error);
             }
         });
     }
